@@ -6,7 +6,7 @@ class Dictionary:
 		self.Word = word
 
 
-
+    # Function to search a given word in dictionary
 	def search(self):
 		if not self.Word:
 			print("Please enter a valid input")
@@ -32,8 +32,9 @@ class Dictionary:
 
 
 
-
+# Ask word to search from user
 word = input("\n Word? ")
 
+# Object of class Dictionary
 my_dictionary = Dictionary(word)
 my_dictionary.search()

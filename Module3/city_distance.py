@@ -1,7 +1,7 @@
 
 import mpu
 
-
+# Function to preprocess coordinates entered by user 
 def check(city):
 	coordinates = city.split(",")
 	lat = coordinates[0]
@@ -27,20 +27,26 @@ class Distance:
 		self.lat2 = lat2
 		self.lon2 = lon2
 
+
+	# Function to calculate distance between two cities
 	def findDistance(self):
 		dist = mpu.haversine_distance((self.lat1, self.lon1), (self.lat2, self.lon2))
 		return dist
 
 
 
-
+# Ask coordinates of City 1 from user
 city1 = input("City1 : ")
+
+# Ask coordinates of City 2 from user
 city2 = input("City2 : ")
 
 
 try:
+	# preprocess the coordinates given by user using check function
 	lat1, lon1 = check(city1)
 	lat2, lon2 = check(city2)
+	# object of class Distance
 	cityDistance = Distance(lat1,lon1,lat2,lon2)
 	print("City 1 and City 2 are " + str(round(cityDistance.findDistance(),2)) +" km apart")
 

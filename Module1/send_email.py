@@ -11,6 +11,7 @@ class Email :
 		self.Body = body
 		self.context = ssl.create_default_context()
 
+    # Function to send Email
 	def send_email(self):
 		if not self.Recipient:
 			return 0
@@ -25,12 +26,17 @@ class Email :
 		return 1
 
 
+
 sender_email = "demo87094@gmail.com"
+# Ask Subject of email from user 
 subject = input("Subject? ")
+# Ask Body of email from user
 body = input("Body? ")
+# Ask recipient email from user
 recipient = input("Recipient? ")	
 password = "demo@49078"
 
+# creating object of Email class
 my_email = Email(sender_email,recipient,password,subject,body)
 check = my_email.send_email()
 if check ==0:
